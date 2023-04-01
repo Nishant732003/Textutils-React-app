@@ -22,7 +22,7 @@ function App() {
   const toggleMode = () => {
     if (mode === "dark") {
       setMode("light");
-      document.title = "Textutils - Light Mode";
+      // document.title = "Textutils - Light Mode";
       document.body.style.backgroundColor = "white";
       showAlert("Light Mode has been Enabled", "success");
       // setInterval(() => {
@@ -32,7 +32,7 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#10246c";
       showAlert("Dark Mode has been Enabled", "success");
-      document.title = "Textutils - Dark Mode";
+      // document.title = "Textutils - Dark Mode";
 
       //   setInterval(()=>{
       //   document.title=" Install TextUtils Now";
@@ -49,12 +49,16 @@ function App() {
         toggleMode={toggleMode}
       />
       <Alert alert={alert} />
-      <div className="container my-3">
+      
+      <div className="container my-2">
         
           
           <Routes>
-            <Route exact path="/about" element={<About />}></Route>
-            <Route exact path="/" element={<Textform heading="Enter the text" mode={mode} showAlert={showAlert} />}></Route>
+            <Route exact path="/about" element={<About mode={mode} />}></Route>
+            <Route exact path="/" element={<Textform heading="Try TextUtils-Word Counter,Character Counter,Remove extra Spaces" mode={mode} showAlert={showAlert} />}>
+        </Route>
+        
+      
           </Routes>
           
         {/* <Textform heading="Enter the text" mode={mode} showAlert={showAlert} /> */}
